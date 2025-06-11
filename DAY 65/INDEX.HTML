@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>Joke Teller</title>
+</head>
+<body>
+  <h1>Joke Teller App</h1>
+  <button onclick="getJoke()">Tell me a joke</button>
+  <p id="joke"></p>
+  <p id="message"></p>
+
+  <script>
+    function showMessage() {
+      document.getElementById("message").innerText = "Hope you liked it!";
+    }
+
+    function getJoke() {
+      fetch('https://official-joke-api.appspot.com/jokes/random')
+        .then(response => response.json())
+        .then(data => {
+          document.getElementById("joke").innerText = `${data.setup} - ${data.punchline}`;
+          // Callback after joke is shown
+          showMessage();
+        })
+        .catch(error => {
+          document.getElementById("joke").innerText = "Failed to fetch joke!";
+        });
+    }
+  </script>
+</body>
+</html>
+
+    <script src="./script"></script>
+</body>
+</html>

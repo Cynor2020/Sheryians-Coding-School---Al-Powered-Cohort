@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GitFolio - Make Your Portfolio</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #eef2f5;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 2px;
+    }
+  
+    .form-group {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    h2 {
+      color: #333;
+      margin-bottom: 2px;
+    }
+  
+    #usernameInput {
+      margin-bottom: 2px;
+      padding: 10px 15px;
+      font-size: 16px;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      outline: none;
+      width: 250px;
+      transition: border-color 0.3s;
+    }
+  
+    #usernameInput:focus {
+      border-color: #007acc;
+    }
+  
+    #fetchBtn {
+      padding: 10px 20px;
+      margin-left: 4px;
+      font-size: 16px;
+      background-color: #007acc;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+  
+    #fetchBtn:hover {
+      background-color: #005f99;
+    }
+  
+    #result {
+      max-width: 400px;
+      background: #fff;
+      margin-top: 10px;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transform: translateY(30px);
+      opacity: 0;
+      animation: fadeIn 0.6s ease forwards;
+    }
+  
+    #result img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 4px solid #007acc;
+      object-fit: cover;
+      margin-bottom: 15px;
+      transition: transform 0.3s ease;
+    }
+  
+    #result img:hover {
+      transform: scale(1.05);
+    }
+  
+    #result p {
+      margin: 10px 0;
+      font-size: 16px;
+      color: #333;
+    }
+  
+    #result a {
+      color: #007acc;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  
+    #result a:hover {
+      text-decoration: underline;
+    }
+  
+    @keyframes fadeIn {
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  </style>
+  
+  
+</head>
+<body>
+  <h2>GitFolio</h2>
+  <h3>Make a portfolio one click</h5>
+    <!-- <p>Devekoped By Sarthak Gadakh</p> -->
+    <div class="form-group">
+        <input type="text" id="usernameInput" placeholder="Enter GitHub username" />
+        <button id="fetchBtn">Get GitFolio</button>
+      </div>
+  <div id="result" style="margin-top: 20px;"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
